@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from user.logic import send_verify_code
 
 def get_verify_code(request):
     '''手机注册'''
     phonenum = request.GET.get('phonenum')
+    send_verify_code(phonenum)
 
 
 def login(request):
